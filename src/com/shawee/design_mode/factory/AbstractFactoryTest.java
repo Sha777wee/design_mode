@@ -1,16 +1,19 @@
 package com.shawee.design_mode.factory;
 
+// 抽象工厂模式
 public class AbstractFactoryTest {
     public static void main(String[] args) {
         IDatabaseUtils iDatabaseUtils = new MysqlDatabaseUtils();
         IConnection connection = iDatabaseUtils.getConnection();
-        connection.connect();;
+        connection.connect();
+        ;
         ICommand command = iDatabaseUtils.getCommand();
         command.command();
 
         iDatabaseUtils = new OracleDatabaseUtils();
         connection = iDatabaseUtils.getConnection();
-        connection.connect();;
+        connection.connect();
+        ;
         command = iDatabaseUtils.getCommand();
         command.command();
     }
@@ -27,21 +30,21 @@ interface IConnection {
     void connect();
 }
 
-class  MysqlConnection implements IConnection{
+class MysqlConnection implements IConnection {
     @Override
-    public void connect(){
+    public void connect() {
         System.out.println("Mysql connection.");
     }
 }
 
-class  OracleConnection implements IConnection{
+class OracleConnection implements IConnection {
     @Override
-    public void connect(){
+    public void connect() {
         System.out.println("Oracle connection.");
     }
 }
 
-interface ICommand{
+interface ICommand {
     void command();
 }
 
@@ -59,12 +62,13 @@ class OracleCommand implements ICommand {
     }
 }
 
-interface IDatabaseUtils{
+interface IDatabaseUtils {
     IConnection getConnection();
+
     ICommand getCommand();
 }
 
-class MysqlDatabaseUtils implements IDatabaseUtils{
+class MysqlDatabaseUtils implements IDatabaseUtils {
 
     @Override
     public IConnection getConnection() {
@@ -77,7 +81,7 @@ class MysqlDatabaseUtils implements IDatabaseUtils{
     }
 }
 
-class OracleDatabaseUtils implements IDatabaseUtils{
+class OracleDatabaseUtils implements IDatabaseUtils {
 
     @Override
     public IConnection getConnection() {

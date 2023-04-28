@@ -1,5 +1,6 @@
 package com.shawee.design_mode.builder;
 
+// 建造者模式
 public class BuilderTest {
 
     public static void main(String[] args) {

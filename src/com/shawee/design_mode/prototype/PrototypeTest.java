@@ -1,5 +1,6 @@
 package com.shawee.design_mode.prototype;
 
+// 原型模式
 public class PrototypeTest {
 
     public static void main(String[] args) throws CloneNotSupportedException {
